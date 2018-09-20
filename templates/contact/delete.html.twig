@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Delete confirmation - AddressBook{% endblock %}
+
+{% block body %}
+  <h2 class="mt-4 mb-3">Delete confirmation</h2>
+
+  <form method="post">
+    <p>Are you sure you want to delete {{ contact.firstName }} {{ contact.lastName }} ?</p>
+    <button name="confirm" value="yes" class="btn btn-outline-danger">Delete</button>
+    <button class="btn btn-outline-secondary">Cancel</button>
+  </form>
+{% endblock %}

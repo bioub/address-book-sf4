@@ -1,0 +1,59 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Update a contact - AddressBook{% endblock %}
+
+{% block body %}
+  <h2 class="mt-4 mb-3">Update a contact</h2>
+
+  {{ form_start(contactForm, {'attr': {'novalidate': 'novalidate'} }) }}
+
+  <div class="form-group{% if not contactForm.firstName.vars.valid %} has-danger{% endif %}">
+    {{ form_label(contactForm.firstName) }}
+    {{ form_widget(contactForm.firstName, {'attr': {
+      'class': 'form-control',
+      'placeholder': 'First name',
+    }}) }}
+    <div class="form-control-feedback">
+      {{ form_errors(contactForm.firstName) }}
+    </div>
+  </div>
+
+  <div class="form-group{% if not contactForm.lastName.vars.valid %} has-danger{% endif %}">
+    {{ form_label(contactForm.lastName) }}
+    {{ form_widget(contactForm.lastName, {'attr': {
+      'class': 'form-control',
+      'placeholder': 'Last name',
+    }}) }}
+    <div class="form-control-feedback">
+      {{ form_errors(contactForm.lastName) }}
+    </div>
+  </div>
+
+  <div class="form-group{% if not contactForm.email.vars.valid %} has-danger{% endif %}">
+    {{ form_label(contactForm.email) }}
+    {{ form_widget(contactForm.email, {'attr': {
+      'class': 'form-control',
+      'placeholder': 'Email',
+    }}) }}
+    <div class="form-control-feedback">
+      {{ form_errors(contactForm.email) }}
+    </div>
+  </div>
+
+  <div class="form-group{% if not contactForm.telephone.vars.valid %} has-danger{% endif %}">
+    {{ form_label(contactForm.telephone) }}
+    {{ form_widget(contactForm.telephone, {'attr': {
+      'class': 'form-control',
+      'placeholder': 'Telephone',
+    }}) }}
+    <div class="form-control-feedback">
+      {{ form_errors(contactForm.telephone) }}
+    </div>
+  </div>
+
+  <div class="form-group ">
+    <button type="submit" class="btn btn-primary">Update</button>
+  </div>
+  {{ form_end(contactForm) }}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Company List - AddressBook{% endblock %}
+
+{% block body %}
+  <h2 class="mt-4 mb-3">Company List</h2>
+  <table class="table table-bordered">
+    <thead class="thead-default">
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for c in companies %}
+      <tr>
+        <td>
+          {{ c.name }}
+        </td>
+        <td>
+          <a href="{{ path('app_company_show', {'id': c.id}) }}"
+             class="btn btn-sm btn-outline-primary">Show</a>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

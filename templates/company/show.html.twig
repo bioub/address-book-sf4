@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ company.name }} - AddressBook{% endblock %}
+
+{% block body %}
+  <h2 class="mt-4 mb-3">{{ company.name }}</h2>
+
+  {% if company.city %}
+    <div class="row mb-2">
+      <div class="col-md-2">
+        <b>City</b>
+      </div>
+      <div class="col-md-10">
+        {{ company.city }}
+      </div>
+    </div>
+  {% endif %}
+
+  <h3>Contacts from {{ company.name }}</h3>
+
+  {% for contact in company.contacts %}
+    <p>{{ contact.firstName }} {{ contact.lastName }}</p>
+  {% else %}
+    <p>Pas de contacts</p>
+  {% endfor %}
+
+{% endblock %}

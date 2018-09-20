@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+      <div class="jumbotron mt-3">
+        <h1 class="display-3">Hello, AddressBook !</h1>
+        <p class="lead">A sample application by Romain Bohdanowicz @ <a href="http://formation.tech/">formation.tech</a></p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="{{ path('app_contact_list') }}" role="button">Show contacts</a>
+        </p>
+      </div>
+    </div>
+{% endblock %}
+

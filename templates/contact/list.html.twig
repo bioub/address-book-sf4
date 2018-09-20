@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Contact List - AddressBook{% endblock %}
+
+{% block body %}
+  <h2 class="mt-4 mb-3">Contact List</h2>
+  <table class="table table-bordered">
+    <thead class="thead-default">
+      <tr>
+        <th>Fullname</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in contacts %}
+      <tr>
+        <td>
+          {{ c.firstName }} {{ c.lastName }}
+        </td>
+        <td>
+          <a href="{{ path('app_contact_show', {'id': c.id}) }}"
+             class="btn btn-sm btn-outline-primary">Show</a>
+          <a href="{{ path('app_contact_update', {'id': c.id}) }}"
+             class="btn btn-sm btn-outline-warning">Modify</a>
+          <a href="{{ path('app_contact_delete', {'id': c.id}) }}"
+             class="btn btn-sm btn-outline-danger">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ contact.firstName }} {{ contact.lastName }} - AddressBook{% endblock %}
+
+{% block body %}
+  <h2 class="mt-4 mb-3">{{ contact.firstName }} {{ contact.lastName }}</h2>
+
+  {% if contact.email %}
+    <div class="row mb-2">
+      <div class="col-md-2">
+        <b>Email</b>
+      </div>
+      <div class="col-md-10">
+        {{ contact.email }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if contact.telephone %}
+    <div class="row mb-2">
+      <div class="col-md-2">
+        <b>Telephone</b>
+      </div>
+      <div class="col-md-10">
+        {{ contact.telephone }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if contact.company %}
+    <div class="row mb-2">
+      <div class="col-md-2">
+        <b>Company</b>
+      </div>
+      <div class="col-md-10">
+        {{ contact.company.name }}
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

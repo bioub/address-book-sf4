@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap-4.1.3/css/bootstrap.css') }}">
+</head>
+<body>
+{{ include('top-menu.html.twig') }}
+{{ include('flash-alert.html.twig') }}
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
+{% block javascripts %}{% endblock %}
+<script src="{{ asset('assets/jquery-3.3.1.js') }}"></script>
+<script src="{{ asset('assets/popper-1.14.4.js') }}"></script>
+<script src="{{ asset('assets/bootstrap-4.1.3/js/bootstrap.js') }}"></script>
+</body>
+</html>
